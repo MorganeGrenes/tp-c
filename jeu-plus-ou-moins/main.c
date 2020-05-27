@@ -58,9 +58,12 @@ int main()
             printf("\nPlayer 2 guess the mystery number\n");//on demande au joueur humain de deviner la valeur du nombre mystère
             scanf("%d", &playerAnswer);
 
+            if (abs(playerAnswer - mysteryNumber) <= 10 && mysteryNumber != playerAnswer){
+                printf("\nclose to 10 you are not far from the value\n");
+            }
+
             if (playerAnswer > mysteryNumber){
                 printf("A little bit less\n");
-
             }
             else if (playerAnswer < mysteryNumber){
                 printf("A little bit more\n");

@@ -6,7 +6,7 @@ int main()
 {
     int max = 0, min = 0;
     srand(time(NULL));
-    int mysteryNumber = 0,  playerAnswer = 0,  compteur = 0, continueGame = 0, howManyPlayers = 0, difficulty = 0;
+    int mysteryNumber = 0,  playerAnswer = 0,  counter = 0, continueGame = 0, howManyPlayers = 0, difficulty = 0;
 
     do{
         printf ("Choose your game mode\n1-Solo\n2-Two players\n");
@@ -25,7 +25,7 @@ int main()
             max = 10000, min = 1;
             printf("\nyou are in hard difficulty\n");
         }
-        compteur = 0;
+        counter = 0;
 
 
         if (howManyPlayers ==1 ){
@@ -54,7 +54,7 @@ int main()
 
 
         do{
-            compteur ++;
+            counter ++;
             printf("\nPlayer 2 guess the mystery number\n");//on demande au joueur humain de deviner la valeur du nombre mystère
             scanf("%d", &playerAnswer);
 
@@ -67,13 +67,13 @@ int main()
             }
             else{
                 printf("GG it's the right answer !\n");
-                printf("you made %d strokes", compteur);
+                printf("you made %d strokes", counter);
                 printf("\nDo you want to continue to play?\n");
                 scanf("%d", &continueGame);
-                compteur = 0;
+                counter = 0;
             }
 
-            if (compteur >= 3){
+            if (counter >= 3){
                 printf("You are 3 strokes away\n");//indique au joueur qu'il en est à 3 essais
             }
 

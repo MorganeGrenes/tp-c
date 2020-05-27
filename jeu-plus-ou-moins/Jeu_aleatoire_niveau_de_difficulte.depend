@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1590522881 source:d:\utilisateurs\morgane\documents\projet programme c\jeu_aleatoire_niveau_de_difficulte\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+

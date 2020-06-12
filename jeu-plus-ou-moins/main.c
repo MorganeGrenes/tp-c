@@ -3,21 +3,8 @@
 #include <stdlib.h>
 #include <time.h>
 
-int askHowManyPlayers(){
-    int askedHowManyPlayers = 0;
-    printf ("Choose your game mode\n1-Solo\n2-Two players\n");
-    scanf ("%d", &askedHowManyPlayers);
-
-    return askedHowManyPlayers;
-}
-
-int askDifficulty(){
-    int askedDifficulty = 0;
-    printf ("Choose your difficulty\n1---easy---\n2---medium---\n3---hard---\n");
-    scanf ("%d", &askedDifficulty);
-
-    return askedDifficulty;
-}
+int askDifficulty();
+int askHowManyPlayers();//prototype
 
 int main()
 {
@@ -26,6 +13,22 @@ int main()
     int mysteryNumber = 0,  playerAnswer = 0,  counter = 0, continueGame = 0, howManyPlayers = 0, difficulty = 0;
 
     do{
+
+        difficulty = askDifficulty();
+
+        if (difficulty == 1){
+            max = 100, min = 1;
+            printf("\nyou are in easy difficulty\n");
+        }
+        if (difficulty == 2){
+            max = 1000, min = 1;
+            printf("\nyou are in medium difficulty\n");
+        }
+        if (difficulty == 3){
+            max = 10000, min = 1;
+            printf("\nyou are in hard difficulty\n");
+        }
+        counter = 0;
 
         howManyPlayers = askHowManyPlayers();
 
@@ -51,22 +54,6 @@ int main()
             }while (mysteryNumber > max);
 
         }
-
-        difficulty = askDifficulty();
-
-        if (difficulty == 1){
-            max = 100, min = 1;
-            printf("\nyou are in easy difficulty\n");
-        }
-        if (difficulty == 2){
-            max = 1000, min = 1;
-            printf("\nyou are in medium difficulty\n");
-        }
-        if (difficulty == 3){
-            max = 10000, min = 1;
-            printf("\nyou are in hard difficulty\n");
-        }
-        counter = 0;
 
 
         do{
@@ -99,10 +86,22 @@ int main()
         } while(playerAnswer != mysteryNumber); // on ne s'arrête pas tant que le nombre mystère est différent du bon nombre donné auparavant.
     } while(continueGame == 1);
 
-
-
-
-
-
     return 0;
+}
+
+
+int askDifficulty(){
+    int askedDifficulty = 0;
+    printf ("Choose your difficulty\n1---easy---\n2---medium---\n3---hard---\n");
+    scanf ("%d", &askedDifficulty);
+
+    return askedDifficulty;
+}
+
+int askHowManyPlayers(){
+    int askedHowManyPlayers = 0;
+    printf ("Choose your game mode\n1-Solo\n2-Two players\n");
+    scanf ("%d", &askedHowManyPlayers);
+
+    return askedHowManyPlayers;
 }
